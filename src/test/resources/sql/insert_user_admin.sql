@@ -1,0 +1,1 @@
+INSERT INTO principal (id, role_name, username) VALUES (1, 'ROLE_ADMIN', 'user');

@@ -1,0 +1,61 @@
+.gradle
+build/
+gradle.properties
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### Docker ###
+/docker/elasticsearch_data
+/docker/logstash_data
+/docker/rabbitmq_logs
+/docker/conf/postgresql-42.6.0.jar
+/docker/grafana
+/docker/loki
+/docker/otel-collector
+/docker/prometheus
+/docker/promtail
+/docker/tempo
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Terraform ###
+terraform/terraform.tfvars
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/tf.plan
+terraform/tfplan.ansi
+terraform/.terraform
+terraform/.terraform.lock.hcl

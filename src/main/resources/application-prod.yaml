@@ -1,0 +1,59 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${KEYCLOAK_CLIENT_ID}
+            client-secret: ${KEYCLOAK_CLIENT_SECRET}
+        provider:
+          keycloak:
+            issuer-uri: ${KEYCLOAK_ISSUER_URI}
+            jwk-set-uri: ${KEYCLOAK_JWK_SET_URI}
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI}
+
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: 5672
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
+    virtual-host: ${RABBIT_VIRTUAL_HOST}
+
+    template:
+      exchange:
+        name: ${RABBIT_EXCHANGE_NAME}
+      queue:
+        name: ${RABBIT_QUEUE_NAME}
+      binding:
+        routing-key: ${RABBIT_ROUTING_KEY}
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+minio:
+  accessKey: ${MINIO_ACCESS_KEY}
+  secretKey: ${MINIO_SECRET_KEY}
+  url: http://${MINIO_HOST}:${MINIO_PORT}
+  inventoryItemBucketName: ${MINIO_INVENTORY_ITEM_BUCKET_NAME}
+
+elasticsearch:
+  host: ${ELASTICSEARCH_HOST}
+  port: ${ELASTICSEARCH_PORT}
+
+secret-key: ${HEADER_SECRET_KEY}
+oAuth_security_schema: ${OAUTH_SECURITY_SCHEMA}
+keycloak-auth-redirect: ${KEYCLOAK_AUTH_REDIRECT}
+service-url: ${SERVICE_URI}
+
+keycloak:
+  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL}
+  server-url: http://${KEYCLOAK_HOST}:${KEYCLOAK_PORT}
+  realm: ${KEYCLOAK_REALM_NAME}
+  resource: ${KEYCLOAK_CLIENT_ID}
+  username: ${KEYCLOAK_ADMIN_USERNAME}
+  password: ${KEYCLOAK_ADMIN_PASSWORD}
+  client-secret: ${CLIENT_SECRET}
